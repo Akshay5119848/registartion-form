@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA DAV PUBLIC SCHOOL Admission Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/8262/8262226.png">
+</head>
+<body>
+    <div class="banner-header">
+       <div class="school-header-text">
+        <h2>TATA DAV PUBLIC SCHOOL</h2> 
+        <h4>Jamadoba, Dhanbad, 828110</h4>
+        <h5>Estd-1986</h5>
+        <p>Admission form </p>
+       </div>
+    </div>
+    
+    <div class="nav-section">
+        <div class="container" style="max-width: 600px;">
+            <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" id="registration-link" href="#">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="submitted-forms-link" href="#">Submitted Forms</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container" style="max-width: 600px;">
+        <div id="registration-section" class="form-container">
+             <h3 class="mb-4">New Admission Registration</h3>
+            <form id="admissionForm">
+                <div class="row mb-3"> <div class="col-md-6"> <label for="formNumber" class="form-label">Form Number:</label>
+                        <span id="formNumberDisplay" class="form-number"></span>
+                        <input type="hidden" id="formNumber" name="formNumber">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="studentName" class="form-label">Student's Full Name:</label>
+                        <input type="text" class="form-control" id="studentName" name="studentName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="dob" class="form-label">Date of Birth:</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="gender" class="form-label">Gender:</label>
+                        <select class="form-select" id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="class" class="form-label">Applying for Class:</label>
+                        <select class="form-select" id="class" name="class" required>
+                            <option value="">Select Class</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="caste" class="form-label">Caste:</label>
+                        <select class="form-select" id="caste" name="caste" required>
+                            <option value="">Select Caste</option>
+                            <option value="General">General</option>
+                            <option value="OBC">OBC</option>
+                            <option value="SC">SC</option>
+                            <option value="ST">ST</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3 hidden-field" id="casteCertificateRow">
+                     <div class="col-md-12">
+                        <label for="casteCertificate" class="form-label">Caste Certificate (SC/ST):</label>
+                        <input type="file" class="form-control" id="casteCertificate" name="casteCertificate" accept=".pdf, .jpg, .png">
+                         <small class="form-text text-muted">Accepted formats: PDF, JPG, PNG. Note: File upload is simulated for demonstration. Actual file storage requires server-side implementation.</small>
+                    </div>
+                </div>
+
+                 <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Child with special needs?</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="physicalDisability" id="disabilityYes" value="Yes">
+                                <label class="form-check-label" for="disabilityYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="physicalDisability" id="disabilityNo" value="No" checked>
+                                <label class="form-check-label" for="disabilityNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-6 hidden-field" id="disabilityDetailsRow">
+                        <label for="disabilityDetails" class="form-label">Specify:</label>
+                        <input type="text" class="form-control" id="disabilityDetails" name="disabilityDetails">
+                    </div>
+                </div>
+                <div class="row mb-3 hidden-field" id="transferCertificateRow">
+                    <div class="col-md-12">
+                       <label for="transferCertificate" class="form-label">Transfer Certificate:</label>
+                       <input type="file" class="form-control" id="transferCertificate" name="transferCertificate" accept=".pdf, .jpg, .png">
+                        <small class="form-text text-muted">Accepted formats: PDF, JPG, PNG. Required for Class 1-10. Note: File upload is simulated.</small>
+                   </div>
+               </div>
+
+                <div class="row mb-3 hidden-field" id="previousSchoolRow">
+                    <div class="col-md-12">
+                       <label for="previousSchool" class="form-label">Previous School Details:</label>
+                       <input type="text" class="form-control" id="previousSchool" name="previousSchool">
+                        <small class="form-text text-muted">Required for Class 1-10.</small>
+                   </div>
+               </div>
+
+               <div class="row mb-3">
+                    <div class="col-md-6">
+                       <label for="fatherName" class="form-label">Father's Name:</label>
+                       <input type="text" class="form-control" id="fatherName" name="fatherName" required>
+                   </div>
+                    <div class="col-md-6">
+                       <label for="fatherQualification" class="form-label">Father's Qualification:</label>
+                       <input type="text" class="form-control" id="fatherQualification" name="fatherQualification">
+                   </div>
+               </div>
+
+               <div class="row mb-3">
+                   <div class="col-md-6">
+                       <label for="motherName" class="form-label">Mother's Name:</label>
+                       <input type="text" class="form-control" id="motherName" name="motherName" required>
+                   </div>
+                    <div class="col-md-6">
+                       <label for="motherQualification" class="form-label">Mother's Qualification:</label>
+                       <input type="text" class="form-control" id="motherQualification" name="motherQualification">
+                   </div>
+               </div>
+
+                <div class="row mb-3">
+                   <div class="col-md-6">
+                       <label for="guardianName" class="form-label">Guardian's Name (if different):</label>
+                       <input type="text" class="form-control" id="guardianName" name="guardianName">
+                   </div>
+                    <div class="col-md-6">
+                       <label class="form-label">Is Father a Tata Employee?</label>
+                       <div>
+                           <div class="form-check form-check-inline">
+                               <input class="form-check-input" type="radio" name="tataEmployee" id="tataEmployeeYes" value="Yes">
+                               <label class="form-check-label" for="tataEmployeeYes">Yes</label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                               <input class="form-check-input" type="radio" name="tataEmployee" id="tataEmployeeNo" value="No" checked>
+                               <label class="form-check-label" for="tataEmployeeNo">No</label>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="row mb-3 hidden-field" id="employerNumberRow">
+                    <div class="col-md-12">
+                       <label for="employerNumber" class="form-label">Father's Employer Number:</label>
+                       <input type="text" class="form-control" id="employerNumber" name="employerNumber">
+                   </div>
+               </div>
+
+               <div class="row mb-3">
+                   <div class="col-md-12">
+                       <label for="address" class="form-label">Full Address:</label>
+                       <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                   </div>
+               </div>
+
+                <div class="row mb-3">
+                   <div class="col-md-4">
+                       <label for="city" class="form-label">City:</label>
+                       <input type="text" class="form-control" id="city" name="city" required>
+                   </div>
+                   <div class="col-md-4">
+                       <label for="state" class="form-label">State:</label>
+                       <input type="text" class="form-control" id="state" name="state" required>
+                   </div>
+                   <div class="col-md-4">
+                       <label for="pincode" class="form-label">Pincode:</label>
+                       <input type="text" class="form-control" id="pincode" name="pincode" required>
+                   </div>
+               </div>
+
+               <div class="row mb-3">
+                   <div class="col-md-6">
+                       <label for="mobile" class="form-label">Mobile Number:</label>
+                       <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                   </div>
+                   <div class="col-md-6">
+                       <label for="email" class="form-label">Email Address:</label>
+                       <input type="email" class="form-control" id="email" name="email">
+                   </div>
+               </div>
+
+                <div class="row mb-4">
+                   <div class="col-md-12">
+                       <label for="studentPhoto" class="form-label">Student Photograph:</label>
+                       <input type="file" class="form-control" id="studentPhoto" name="studentPhoto" accept="image/*">
+                       <small class="form-text text-muted">Accepted formats: Images. Note: File upload is simulated for demonstration. Actual file storage requires server-side implementation.</small>
+                   </div>
+               </div>
+
+               <button type="submit" class="btn btn-primary w-full" id="submitBtn">Submit Admission</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 960px;">
+        <div id="submitted-forms-section" class="table-container d-none">
+            <h3>Submitted Forms</h3>
+             <div class="table-responsive"> <table class="table table-striped" id="submittedDataTable"> <thead>
+                        <tr>
+                            <th>Form No.</th>
+                            <th>Student Name</th>
+                            <th>Class</th>
+                            <th>Caste</th>
+                            <th>Caste Cert.</th>
+                            <th>Special Needs</th>
+                             <th>Transfer Cert.</th>
+                             <th>Previous School</th>
+                             <th>Father's Name</th>
+                            <th>Father's Qual.</th>
+                            <th>Mother's Qual.</th>
+                            <th>Mobile</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
